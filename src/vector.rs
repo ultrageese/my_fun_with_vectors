@@ -28,6 +28,13 @@ impl Mul<i32> for Vector{
         Self { x: self.x*(rhs as f64), y: self.y*(rhs as f64) }
     }
 }
+impl Mul for Vector{
+    type Output = f64;
+    fn mul(self, rhs: Self) -> Self::Output {
+        self.x*rhs.x + self.y*rhs.y
+    }
+}
+
 
 
 impl Display for Vector{
